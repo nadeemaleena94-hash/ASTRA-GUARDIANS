@@ -1,0 +1,368 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="ASTRA GUARDIANS - An educational space game about asteroid detection, planetary defense and NASA science.">
+
+    <title>ASTRA GUARDIANS | Protect Earth</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">✦ ASTRA <span>GUARDIANS</span></div>
+    <div class="nav-tag">SPACE GAME DESIGN · 2026</div>
+</header>
+
+<main>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="eyebrow">PLANETARY DEFENSE MISSION</p>
+
+            <h1>
+                ONE ASTRONAUT.
+                <span>ONE PLANET.</span>
+            </h1>
+
+            <p class="hero-description">
+                Become a computer-science-skilled astronaut.
+                Explore the universe, detect approaching asteroids,
+                analyze space objects and protect Earth using
+                science and technology.
+            </p>
+
+            <div class="hero-buttons">
+                <button class="primary-btn" onclick="startGame()">
+                    START YOUR MISSION 🚀
+                </button>
+
+                <button class="secondary-btn"
+                    onclick="scrollToNASA()">
+                    EXPLORE NASA DATA
+                </button>
+            </div>
+
+        </div>
+
+        <div class="space-visual">
+
+            <div class="planet"></div>
+            <div class="orbit"></div>
+            <div class="asteroid"></div>
+            <div class="astronaut">👩‍🚀</div>
+
+            <div class="floating-star star-one">✦</div>
+            <div class="floating-star star-two">✧</div>
+            <div class="floating-star star-three">✦</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- GAME FEATURES -->
+
+    <section class="section">
+
+        <h2>Your Mission Toolkit</h2>
+
+        <p class="section-description">
+            Your intelligence, technology and scientific knowledge
+            are your greatest superpowers.
+        </p>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <div class="feature-icon">📡</div>
+                <h3>01. DETECT</h3>
+                <p>
+                    Discover near-Earth objects and monitor
+                    their movement through space.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3>02. ANALYZE</h3>
+                <p>
+                    Study asteroid size, velocity, distance
+                    and scientific observations.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>03. DEFEND</h3>
+                <p>
+                    Make strategic decisions using
+                    science-based planetary defense concepts.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- GAME SECTION -->
+
+    <section class="section" id="game">
+
+        <h2>MISSION CONTROL</h2>
+
+        <p class="section-description">
+            Three missions. Three critical decisions.
+            Can you become Earth's Guardian?
+        </p>
+
+        <div class="game-panel">
+
+            <div class="game-header">
+
+                <div>
+                    <p class="eyebrow">ASTRONAUT TRAINING SIMULATOR</p>
+                    <h3 id="mission-title">MISSION 01</h3>
+                </div>
+
+                <div class="score-panel">
+                    <div>⭐ SCORE: <span id="score">0</span></div>
+                    <div>🛰️ PROGRESS: <span id="progress">0/3</span></div>
+                </div>
+
+            </div>
+
+
+            <div class="mission-box">
+
+                <p class="mission-label">INCOMING SPACE OBJECT</p>
+
+                <h3 id="object-name">Training asteroid A-01</h3>
+
+                <p id="object-description">
+                    Mission control is waiting for your decision.
+                </p>
+
+                <div class="object-stats">
+
+                    <div>
+                        <span>DIAMETER</span>
+                        <strong id="diameter">85 m</strong>
+                    </div>
+
+                    <div>
+                        <span>VELOCITY</span>
+                        <strong id="velocity">18,400 km/h</strong>
+                    </div>
+
+                    <div>
+                        <span>APPROACH DISTANCE</span>
+                        <strong id="distance">4.2 million km</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <h3 class="decision-heading">
+                SELECT YOUR STRATEGY
+            </h3>
+
+            <div class="choices">
+
+                <button class="choice" data-choice="track">
+                    <span>📡</span>
+                    <strong>TRACK & ANALYZE</strong>
+                    <small>
+                        Collect observations and improve
+                        knowledge of the asteroid's orbit.
+                    </small>
+                </button>
+
+                <button class="choice" data-choice="kinetic">
+                    <span>🚀</span>
+                    <strong>KINETIC IMPACTOR</strong>
+                    <small>
+                        Study the possibility of changing
+                        an asteroid's trajectory through impact.
+                    </small>
+                </button>
+
+                <button class="choice" data-choice="tractor">
+                    <span>🛰️</span>
+                    <strong>GRAVITY TRACTOR</strong>
+                    <small>
+                        Explore a spacecraft's gravitational
+                        pull as a gradual deflection concept.
+                    </small>
+                </button>
+
+            </div>
+
+
+            <div id="feedback" class="feedback" role="status"></div>
+
+            <div class="game-buttons">
+
+                <button id="next-btn" class="primary-btn" disabled>
+                    NEXT MISSION →
+                </button>
+
+                <button id="restart-btn" class="secondary-btn">
+                    RESTART TRAINING
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- NASA DATA SECTION -->
+
+    <section class="section" id="nasa">
+
+        <h2>NASA LIVE SKY WATCH</h2>
+
+        <p class="section-description">
+            Explore real near-Earth asteroid observations
+            retrieved from NASA's open data service.
+        </p>
+
+        <div class="nasa-panel">
+
+            <div class="nasa-header">
+
+                <h3>🌍 Near-Earth Object Observatory</h3>
+
+                <button id="refresh-btn" class="secondary-btn">
+                    ↻ REFRESH DATA
+                </button>
+
+            </div>
+
+            <div id="nasa-feed">
+
+                <p>Connecting to NASA...</p>
+
+            </div>
+
+            <p class="source-note">
+                Data source: NASA/JPL Near-Earth Object Web Service.
+                <a href="https://api.nasa.gov/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    NASA API Documentation
+                </a>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATIONAL SECTION -->
+
+    <section class="section">
+
+        <h2>SPACE SCIENCE EXPLORER</h2>
+
+        <p class="section-description">
+            Not every space object is a threat.
+            Understanding the universe is the first step
+            towards protecting our planet.
+        </p>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <div class="feature-icon">☄️</div>
+                <h3>ASTEROIDS</h3>
+                <p>
+                    Rocky objects that orbit the Sun.
+                    Some travel through near-Earth space.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌠</div>
+                <h3>COMETS</h3>
+                <p>
+                    Icy bodies that can develop glowing
+                    comas and tails near the Sun.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌌</div>
+                <h3>THE UNIVERSE</h3>
+                <p>
+                    Explore stars, planets, galaxies
+                    and other fascinating cosmic phenomena.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about">
+
+        <h2>THE FUTURE OF PLANETARY DEFENSE</h2>
+
+        <p>
+            ASTRA GUARDIANS transforms space science into
+            an interactive learning experience. It encourages
+            curiosity, critical thinking, technological
+            innovation and awareness of planetary defense.
+        </p>
+
+        <p class="disclaimer">
+            ASTRA GUARDIANS is an independent educational
+            project. It is not affiliated with or endorsed
+            by NASA. Game scenarios are simulations,
+            not real emergency alerts or operational advice.
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <h3>✦ ASTRA GUARDIANS</h3>
+
+    <p>ONE ASTRONAUT. ONE PLANET. INFINITE POSSIBILITIES.</p>
+
+    <p>NASA data credit: NASA/JPL-Caltech NeoWs.</p>
+
+    <p id="data-status">NASA data status: Checking...</p>
+
+    <p>Code and interface: Original project implementation.
+       AI-assisted code development is acknowledged.</p>
+
+    <p>© 2026 ASTRA GUARDIANS</p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

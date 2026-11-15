@@ -1,0 +1,608 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --background: #050b18;
+    --panel: #101d32;
+    --panel-light: #172b45;
+    --cyan: #62e6f5;
+    --blue: #2389d5;
+    --white: #edf7ff;
+    --muted: #a5bad0;
+    --gold: #ffc86b;
+    --green: #65e6a5;
+    --red: #ff777f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(ellipse at 50% 0%, #12304c 0%, transparent 45%),
+        var(--background);
+
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid #253b55;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--cyan);
+}
+
+.nav-tag {
+    border: 1px solid #31516d;
+    border-radius: 30px;
+    padding: 7px 13px;
+
+    font-size: 11px;
+    color: var(--cyan);
+    letter-spacing: 1px;
+}
+
+.hero {
+    max-width: 1200px;
+    margin: auto;
+    padding: 85px 30px;
+
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.eyebrow {
+    color: var(--cyan);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(35px, 5vw, 65px);
+    line-height: 1.15;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--cyan);
+}
+
+.hero-description {
+    color: var(--muted);
+    max-width: 600px;
+    font-size: 16px;
+}
+
+.hero-buttons,
+.game-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 13px 20px;
+    border-radius: 9px;
+    font-weight: 700;
+    border: 1px solid transparent;
+    transition: 0.2s;
+}
+
+.primary-btn {
+    background: var(--cyan);
+    color: #071521;
+}
+
+.secondary-btn {
+    background: var(--panel-light);
+    color: var(--white);
+    border-color: #34536e;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.12);
+}
+
+button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* SPACE ILLUSTRATION */
+
+.space-visual {
+    min-height: 350px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+
+    border: 1px solid #294a65;
+    border-radius: 25px;
+
+    background:
+        radial-gradient(circle, #153a5a, #081526 75%);
+}
+
+.planet {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle at 30% 25%, #c1f8ff, #36a9d2 25%, #09518a 65%, #062b53);
+
+    box-shadow:
+        0 0 35px #55dfff,
+        0 0 100px #278cce88;
+}
+
+.orbit {
+    position: absolute;
+    width: 280px;
+    height: 110px;
+    border: 1px solid #66dff588;
+    border-radius: 50%;
+    transform: rotate(-25deg);
+}
+
+.asteroid {
+    position: absolute;
+    top: 55px;
+    right: 45px;
+
+    width: 45px;
+    height: 35px;
+
+    border-radius: 45%;
+    background: #88796e;
+
+    box-shadow: 0 0 20px #ffc86b;
+    animation: float 3s infinite ease-in-out;
+}
+
+.astronaut {
+    position: absolute;
+    left: 25px;
+    bottom: 20px;
+    font-size: 65px;
+    animation: float 4s infinite ease-in-out;
+}
+
+.floating-star {
+    position: absolute;
+    color: var(--cyan);
+    font-size: 25px;
+}
+
+.star-one {
+    top: 30px;
+    left: 30px;
+}
+
+.star-two {
+    bottom: 60px;
+    right: 40px;
+}
+
+.star-three {
+    top: 40px;
+    right: 120px;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* GENERAL SECTIONS */
+
+.section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 45px 30px;
+}
+
+.section h2,
+.about h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
+.section-description {
+    color: var(--muted);
+    margin: 10px 0 25px;
+    max-width: 700px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.feature-card {
+    background: linear-gradient(145deg, #14263d, #0b1729);
+    border: 1px solid #2b4662;
+    border-radius: 17px;
+    padding: 25px;
+
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--cyan);
+}
+
+.feature-icon {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.feature-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* GAME */
+
+.game-panel {
+    background: linear-gradient(145deg, #132942, #0b1729);
+    border: 1px solid #3c637e;
+    border-radius: 20px;
+    padding: 25px;
+}
+
+.game-header,
+.nasa-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.game-header h3 {
+    font-family: 'Orbitron', sans-serif;
+    margin-top: 8px;
+}
+
+.score-panel {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.score-panel div {
+    background: #071526;
+    padding: 10px 13px;
+    border: 1px solid #34516b;
+    border-radius: 9px;
+    font-size: 13px;
+}
+
+.score-panel span {
+    color: var(--gold);
+    font-weight: 800;
+}
+
+.mission-box {
+    background: #071526;
+    border: 1px solid #294761;
+    border-radius: 15px;
+    padding: 23px;
+    margin: 25px 0;
+}
+
+.mission-label {
+    color: var(--cyan);
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.mission-box h3 {
+    font-family: 'Orbitron', sans-serif;
+    margin: 10px 0;
+}
+
+.mission-box p {
+    color: var(--muted);
+}
+
+.object-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.object-stats div {
+    background: #12243a;
+    border-radius: 9px;
+    padding: 12px;
+}
+
+.object-stats span,
+.object-stats strong {
+    display: block;
+}
+
+.object-stats span {
+    color: var(--muted);
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+
+.object-stats strong {
+    font-size: 13px;
+}
+
+.decision-heading {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.choices {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.choice {
+    background: #142b44;
+    color: var(--white);
+    border: 1px solid #34536d;
+    border-radius: 12px;
+    padding: 17px;
+    text-align: left;
+    transition: 0.2s;
+}
+
+.choice:hover:not(:disabled) {
+    border-color: var(--cyan);
+    background: #1b3a55;
+}
+
+.choice.selected {
+    border-color: var(--cyan);
+    background: #16415a;
+}
+
+.choice span {
+    font-size: 26px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.choice strong,
+.choice small {
+    display: block;
+}
+
+.choice strong {
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.choice small {
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+.feedback {
+    display: none;
+    margin-top: 20px;
+    padding: 18px;
+    background: #123a32;
+    border: 1px solid #367d6b;
+    border-radius: 12px;
+}
+
+.feedback.show {
+    display: block;
+}
+
+.feedback p {
+    margin-top: 7px;
+    color: #d2eee5;
+}
+
+/* NASA DATA */
+
+.nasa-panel {
+    background: #101f34;
+    border: 1px solid #34536d;
+    border-radius: 18px;
+    padding: 23px;
+}
+
+.nasa-header h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+}
+
+.neo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 17px 0;
+    border-bottom: 1px solid #29415b;
+}
+
+.neo-item:last-child {
+    border-bottom: none;
+}
+
+.neo-item p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.hazard {
+    color: var(--red);
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.safe {
+    color: var(--green);
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.source-note {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 18px;
+}
+
+/* ABOUT AND FOOTER */
+
+.about {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 45px 30px;
+
+    text-align: center;
+    background: #10243a;
+    border-radius: 20px;
+    border: 1px solid #34536d;
+}
+
+.about p {
+    color: var(--muted);
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.disclaimer {
+    font-size: 12px;
+}
+
+footer {
+    border-top: 1px solid #29415b;
+    text-align: center;
+    padding: 35px 20px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+footer h3 {
+    color: var(--cyan);
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 10px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media(max-width: 800px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 50px;
+    }
+
+    .feature-grid,
+    .choices {
+        grid-template-columns: 1fr;
+    }
+
+    .object-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .game-header {
+        align-items: flex-start;
+    }
+
+    .navbar {
+        padding: 18px;
+    }
+
+    .nav-tag {
+        font-size: 9px;
+    }
+}
+
+@media(max-width: 480px) {
+
+    .logo {
+        font-size: 15px;
+    }
+
+    .hero {
+        padding: 45px 18px;
+    }
+
+    .section {
+        padding: 35px 18px;
+    }
+
+    .game-panel {
+        padding: 15px;
+    }
+
+    .score-panel {
+        flex-direction: column;
+    }
+
+    .nasa-header {
+        align-items: flex-start;
+    }
+
+}
