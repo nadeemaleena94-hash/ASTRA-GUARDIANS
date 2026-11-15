@@ -104,7 +104,7 @@ NASA data is credited to NASA/JPL.
 
 ## 👩‍🚀 Project Creator
 
-[Your Name]
+Aleena Nadeem
 
 NASA Space Apps Challenge 2026
 
